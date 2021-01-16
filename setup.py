@@ -3,10 +3,10 @@ import platform
 
 
 setup(
-  name='robot-led-service',
+  name='robot-wander-behavior',
   version='0.1',
-  description='Robot LED service',
-  url='https://github.com/rhinst/robot-led-service',
+  description='Robot wander behavior',
+  url='https://github.com/rhinst/robot-wander-behavior',
   author='Rob Hinst',
   author_email='rob@hinst.net',
   license='MIT',
@@ -22,6 +22,6 @@ setup(
   test_suite='tests',
   tests_require=['pytest==6.2.1'],
   entry_points={
-    'console_scripts': ['led=led.__main__:main']
+    'console_scripts': ['wander=wander.__main__:main']
   }
 )
