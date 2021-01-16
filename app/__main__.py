@@ -46,8 +46,10 @@ def turn_randomly(redis_client: Redis):
 
 
 def say(redis_client: Redis, phrase: str):
+    led_on(redis_client, "red")
     redis_client.publish("subsystem.speech.command", phrase)
     time.sleep(1)
+    led_off(redis_client, "red")
 
 
 def drive(redis_client: Redis):
@@ -104,9 +106,7 @@ def main():
             if distance < 40.0:
                 logger.debug("Too close to an obstacle. Turning away.")
                 stop_motors(redis_client)
-                led_on(redis_client, "red")
                 say(redis_client, "Can't go that way!")
-                led_off(redis_client, "red")
                 turn_randomly(redis_client)
                 drive(redis_client)
             sleep(0.01)
