@@ -22,6 +22,6 @@ setup(
   test_suite='tests',
   tests_require=['pytest==6.2.1'],
   entry_points={
-    'console_scripts': ['wander=wander.__main__:main']
+    'console_scripts': ['wander=app.__main__:main']
   }
 )
