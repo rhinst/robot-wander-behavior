@@ -101,7 +101,7 @@ def main():
             logger.debug("Reading distance")
             distance = get_distance(pubsub)
             logger.debug(f"Distance is {distance}")
-            if distance < 30.0:
+            if distance < 40.0:
                 logger.debug("Too close to an obstacle. Turning away.")
                 stop_motors(redis_client)
                 led_on(redis_client, "red")
